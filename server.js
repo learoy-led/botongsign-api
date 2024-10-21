@@ -7,7 +7,7 @@ require('dotenv').config();
 const app = express();
 
 const corsOptions = {
-  origin: 'http://localhost:4200', 
+  origin: 'https://botongsign.com', 
   methods: ['POST', 'GET'],
   credentials: true, // Permitir cookies
 };
