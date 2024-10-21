@@ -5,7 +5,16 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
+
+const corsOptions = {
+  origin: 'http://localhost:4200', // Permitir solo este origen
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Permitir cookies
+};
+
+app.use(cors(corsOptions));
+
+
 app.use(bodyParser.json());
 
 
