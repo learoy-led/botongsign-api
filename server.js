@@ -7,7 +7,7 @@ require('dotenv').config();
 const app = express();
 
 const corsOptions = {
-  origin: 'http://localhost:4200', // Permitir solo este origen
+  origin: 'https://botongsign.com', 
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // Permitir cookies
 };
@@ -56,7 +56,7 @@ app.post('/send-email', (req, res) => {
   });
 });
 
-// Inicia el servidor en el puerto 3000
+
 app.listen(3000, () => {
   console.log('Servidor en el puerto 3000');
 });
