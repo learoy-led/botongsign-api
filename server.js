@@ -16,6 +16,8 @@ const app = express();
 app.use(cors());
 //app.use(cors(corsOptions));
 
+app.options('*', cors());
+
 
 app.use(bodyParser.json());
 
