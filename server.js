@@ -19,7 +19,6 @@ allowedHeaders: ['Content-Type', 'Authorization']
 };
 
 
-
 app.use(cors(corsOptions));
 
 app.options('*', cors());
@@ -47,6 +46,10 @@ app.use((req, res, next) => {
   console.log('CORS headers:', res.getHeaders());
   next();
 });
+
+app.get('/', (req, res) => {
+  res.send('La API funciona')
+})
 
 app.post('/send-email', (req, res) => {
   const { name, email, phone, message } = req.body;
