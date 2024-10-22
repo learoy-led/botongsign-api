@@ -31,6 +31,10 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+app.use((req, res, next) => {
+  console.log('CORS headers:', res.getHeaders());
+  next();
+});
 
 app.post('/send-email', (req, res) => {
   const { name, email, phone, message } = req.body;
@@ -63,4 +67,4 @@ app.listen(3000, () => {
   console.log('Servidor en el puerto 3000');
 });
 
-// module.exports = app;
+module.exports = app;
