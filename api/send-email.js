@@ -14,7 +14,6 @@ const corsOptions = {
   };
   
 app.use(cors(corsOptions));
-
 app.use(bodyParser.json());
 
 
@@ -29,16 +28,7 @@ const transporter = nodemailer.createTransport({
     },
   });
   
-  app.use((req, res, next) => {
-    console.log('CORS headers:', res.getHeaders());
-    next();
-  });
-  
-  app.get('/', (req, res) => {
-    res.send('La API funciona')
-  })
-  
-  app.post('/send-email', (req, res, next) => { 
+  app.post('/api/send-email', (req, res, next) => { 
 
     const { name, email, phone, message } = req.body;
   
@@ -66,12 +56,5 @@ const transporter = nodemailer.createTransport({
   
 
   });
-  
-
-const PORT = Number(process.env.PORT)
-
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en puerto ${PORT}`)
-})
 
 module.exports = app;
