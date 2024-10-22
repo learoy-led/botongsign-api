@@ -11,8 +11,7 @@ const corsOptions = {
   // origin: 'https://botongsign.com', 
   // methods: 'POST',
   // credentials: true, // Permitir cookies
-
-  origin: '*',
+origin: '*',
 methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 allowedHeaders: ['Content-Type', 'Authorization']
 
