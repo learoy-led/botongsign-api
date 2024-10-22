@@ -8,14 +8,25 @@ const app = express();
 
 
 const corsOptions = {
-  origin: 'https://botongsign.com', 
-  methods: 'POST',
-  credentials: true, // Permitir cookies
+  // origin: 'https://botongsign.com', 
+  // methods: 'POST',
+  // credentials: true, // Permitir cookies
+
+  origin: '*',
+methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+allowedHeaders: ['Content-Type', 'Authorization']
+
 };
+
+
 
 app.use(cors(corsOptions));
 
 app.options('*', cors());
+
+app.options('*', (req, res) => {
+  res.sendStatus(200);
+});
 
 
 app.use(bodyParser.json());
