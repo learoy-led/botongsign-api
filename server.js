@@ -7,8 +7,7 @@ const bodyParser = require('body-parser');
 const app = express()
 
 const corsOptions = {
-    // origin: 'https://botongsign.com',  
-  origin: '*',
+  origin: 'https://www.botongsign.com',  
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true, // Permitir cookies
