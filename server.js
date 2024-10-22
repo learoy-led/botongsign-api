@@ -6,14 +6,15 @@ require('dotenv').config();
 
 const app = express();
 
-const corsOptions = {
-  origin: 'https://botongsign.com', 
-  methods: ['POST', 'GET'],
-  credentials: true, // Permitir cookies
-};
 
-//app.use(cors());
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: 'https://botongsign.com', 
+//   methods: ['POST', 'GET'],
+//   credentials: true, // Permitir cookies
+// };
+
+app.use(cors());
+//app.use(cors(corsOptions));
 
 
 app.use(bodyParser.json());
@@ -58,8 +59,8 @@ app.post('/send-email', (req, res) => {
 });
 
 
-// app.listen(3000, () => {
-//   console.log('Servidor en el puerto 3000');
-// });
+app.listen(3000, () => {
+  console.log('Servidor en el puerto 3000');
+});
 
-module.exports = app;
+// module.exports = app;
